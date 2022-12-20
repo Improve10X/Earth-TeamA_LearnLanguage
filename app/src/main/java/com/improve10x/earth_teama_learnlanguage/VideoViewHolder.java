@@ -8,23 +8,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 public class VideoViewHolder extends RecyclerView.ViewHolder {
     ImageView videoImg;
     TextView videoTitleTxt;
-    ImageView iconImg;
+    ImageView channelLogImg;
+    TextView channelNameTxt;
     TextView viewsTxt;
-    TextView dotTxt;
-    TextView daysTxt;
+    TextView uploadedTimeTxt;
     ImageButton deleteImgBtn;
 
     public VideoViewHolder(@NonNull View itemView) {
         super(itemView);
         videoImg = itemView.findViewById(R.id.video_img);
         videoTitleTxt = itemView.findViewById(R.id.video_title_txt);
-        iconImg = itemView.findViewById(R.id.icon_img);
+        channelLogImg = itemView.findViewById(R.id.channel_logo_img);
+        channelNameTxt = itemView.findViewById(R.id.channel_name_txt);
         viewsTxt = itemView.findViewById(R.id.views_txt);
-        dotTxt = itemView.findViewById(R.id.dot_txt);
-        daysTxt = itemView.findViewById(R.id.days_txt);
+        uploadedTimeTxt = itemView.findViewById(R.id.uploaded_time_txt);
         deleteImgBtn = itemView.findViewById(R.id.delete_img_btn);
     }
 }

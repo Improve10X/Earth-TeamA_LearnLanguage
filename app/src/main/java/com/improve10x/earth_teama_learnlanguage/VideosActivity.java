@@ -29,19 +29,21 @@ public class VideosActivity extends AppCompatActivity {
         videos = new ArrayList<>();
 
         Video video1 = new Video();
-        video1.imageUrl = "https://i.ytimg.com/vi/4xhfFP9ylsU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBBz8MEJGj8cjSX2iXv4zQ0QGnh5Q";
-        video1.title = "Kung fu Panda";
-        video1.iconImgUrl = "https://yt3.googleusercontent.com/ytc/AMLnZu_Qx8pZINayK8MHTCMpT2dH6xBNdGvwgFargUPF=s88-c-k-c0x00ffffff-no-rj";
-        video1.viewsTxt = "300k views";
-        video1.daysTxt = "10days ago";
+        video1.imageUrl = "https://i.ytimg.com/an_webp/4BgWg2EAmww/mqdefault_6s.webp?du=3000&sqp=COS8h50G&rs=AOn4CLBvyrsN1bY5xuvUMhtXNXf3YJ5s5Q";
+        video1.title = "Abdul Kalam, A Lesson for my Teacher: Learn English (IND) - Story for Children";
+        video1.channelLogImgUrl = "https://yt3.ggpht.com/ytc/AMLnZu-VKA65djvd53kKMls4yvfdkkrVQgBZfTF5BNFqgA=s68-c-k-c0x00ffffff-no-rj";
+        video1.channelName = "BookBox.com";
+        video1.views = "3.3M views";
+        video1.uploadedTime = "11years ago";
         videos.add(video1);
 
         Video video2 = new Video();
-        video2.imageUrl = "https://i.ytimg.com/an_webp/s5BMcaQsjbM/mqdefault_6s.webp?du=3000&sqp=CJOThp0G&rs=AOn4CLAjMfAaf4a-Bj93OojaxQGx7U_i0Q";
-        video2.title = "Sam";
-        video2.iconImgUrl = "https://yt3.ggpht.com/3ErdBd0bg2Qw5rKdqDK-7vPAf0tirRuodlGGZuhZePQcjEu8i5KniCN-EUCBtQkSOy14M26O=s68-c-k-c0x00ffffff-no-rj";
-        video2.viewsTxt = "300k views";
-        video2.daysTxt = "10days ago";
+        video2.imageUrl = "https://i.ytimg.com/an_webp/XbhecuoEgxs/mqdefault_6s.webp?du=3000&sqp=CNPah50G&rs=AOn4CLCb41nrALCfFBQnFD7Rgyhf0-m_2A";
+        video2.title = "Kung Fu Panda | Who Are You";
+        video2.channelLogImgUrl = "https://yt3.ggpht.com/ytc/AMLnZu_Qx8pZINayK8MHTCMpT2dH6xBNdGvwgFargUPF=s48-c-k-c0x00ffffff-no-rj";
+        video2.channelName = "Khaled Osman";
+        video2.views = "38.5k views";
+        video2.uploadedTime = "1year ago";
         videos.add(video2);
     }
 

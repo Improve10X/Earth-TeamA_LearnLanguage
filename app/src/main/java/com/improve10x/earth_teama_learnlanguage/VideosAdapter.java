@@ -31,11 +31,10 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         Video video = videos.get(position);
         holder.videoTitleTxt.setText(video.title);
-        holder.viewsTxt.setText(video.viewsTxt);
-        holder.dotTxt.setText(video.dotTxt);
-        holder.daysTxt.setText(video.daysTxt);
+        holder.viewsTxt.setText(video.views);
+        holder.uploadedTimeTxt.setText(video.uploadedTime);
         Picasso.get().load(video.imageUrl).into(holder.videoImg);
-        Picasso.get().load(video.iconImgUrl).into(holder.iconImg);
+        Picasso.get().load(video.channelLogImgUrl).into(holder.channelLogImg);
     }
 
     @Override

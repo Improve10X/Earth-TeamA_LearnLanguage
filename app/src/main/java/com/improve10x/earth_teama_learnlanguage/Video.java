@@ -5,8 +5,8 @@ public class Video {
     public String id;
     public String imageUrl;
     public String title;
-    public String iconImgUrl;
-    public String viewsTxt;
-    public String dotTxt;
-    public String daysTxt;
+    public String channelLogImgUrl;
+    public String channelName;
+    public String views;
+    public String uploadedTime;
 }
