@@ -1,13 +1,11 @@
 package com.improve10x.earth_teama_learnlanguage;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +80,7 @@ public class VideosActivity extends BaseActivity {
     private void setupVideosAdapter() {
         videosAdapter = new VideosAdapter();
         videosAdapter.setData(videos);
-        videosAdapter.OnItemActionListener(new OnItemActionListener() {
+        videosAdapter.setOnItemActionListener(new OnItemActionListener() {
             @Override
             public void onItemClick(Video video) {
                 showToast("Item Clicked");

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.w3c.dom.Text;
 
 public class VideoViewHolder extends RecyclerView.ViewHolder {
+
     ImageView videoImg;
     TextView videoTitleTxt;
     ImageView channelLogImg;
