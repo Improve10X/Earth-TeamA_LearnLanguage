@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface VideoService {
 
-@GET("EarthTeamAVideos")
+@GET(Constants.VIDEOS_END_POINT)
     Call<List<Video>> fetchVideos();
 }

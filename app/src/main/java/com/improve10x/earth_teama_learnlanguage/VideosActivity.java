@@ -14,7 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class VideosActivity extends AppCompatActivity {
+public class VideosActivity extends BaseActivity {
 
    private ArrayList<Video> videos = new ArrayList<>();
    private RecyclerView videosRv;
@@ -55,7 +55,7 @@ public class VideosActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Video>> call, Throwable t) {
-                Toast.makeText(VideosActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                showToast("Failed to fetch video");
             }
         });
     }
