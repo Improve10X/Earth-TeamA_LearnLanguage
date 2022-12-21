@@ -35,23 +35,12 @@ public class AddVideoActivity extends BaseAddEditVideoActivity {
             String channelLogo = channelLogoImageUrlTxt.getText().toString();
             String videoView = videoViewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
-            Video video = addVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
-            saveVideo(video);
+            Video video = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
+            addVideo(video);
         });
     }
 
-    private Video addVideo(String title, String videoImgUrl, String channelName, String channelLogo, String videoView, String uploadedTime) {
-        Video video = new Video();
-        video.title = title;
-        video.imageUrl = videoImgUrl;
-        video.channelName = channelName;
-        video.channelLogImgUrl = channelLogo;
-        video.views = videoView;
-        video.uploadedTime = uploadedTime;
-        return video;
-    }
-
-    private void saveVideo(Video video) {
+    private void addVideo(Video video) {
         Call<Video> call = videosService.createVideo(video);
         call.enqueue(new Callback<Video>() {
             @Override

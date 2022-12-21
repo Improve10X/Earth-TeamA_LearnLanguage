@@ -41,20 +41,13 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
             String channelLogo = channelLogoImageUrlTxt.getText().toString();
             String videoView = videoViewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
-            updateVideo(video.id, title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
+            Video updatedVideo = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
+            updateVideo(video.id, updatedVideo);
         });
     }
 
-    private void updateVideo(String id, String title, String videoImgUrl, String channelName, String channelLogo, String videoView, String uploadedTime) {
-        Video video = new Video();
-        video.title = title;
-        video.imageUrl = videoImgUrl;
-        video.channelName = channelName;
-        video.channelLogImgUrl = channelLogo;
-        video.views = videoView;
-        video.uploadedTime = uploadedTime;
-
-        Call<Void> call = videosService.updateVideo(id, video);
+    private void updateVideo(String id, Video updatedVideo) {
+        Call<Void> call = videosService.updateVideo(id, updatedVideo);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {

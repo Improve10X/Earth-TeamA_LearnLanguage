@@ -31,4 +31,16 @@ public class BaseAddEditVideoActivity extends BaseActivity {
         channelLogoImageUrlTxt = findViewById(R.id.channel_logo_image_url_txt);
         uploadedTimeTxt = findViewById(R.id.uploaded_time_txt);
     }
+
+    protected Video createVideo(String title, String videoImgUrl, String channelName, String channelLogo, String videoView, String uploadedTime) {
+        Video video = new Video();
+        video.title = title;
+        video.imageUrl = videoImgUrl;
+        video.channelName = channelName;
+        video.channelLogImgUrl = channelLogo;
+        video.views = videoView;
+        video.uploadedTime = uploadedTime;
+        return video;
+    }
+
 }
