@@ -1,4 +1,4 @@
-package com.improve10x.earth_teama_learnlanguage;
+package com.improve10x.earth_teama_learnlanguage.videos;
 
 import android.view.View;
 import android.widget.ImageButton;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.improve10x.earth_teama_learnlanguage.R;
 
 import org.w3c.dom.Text;
 

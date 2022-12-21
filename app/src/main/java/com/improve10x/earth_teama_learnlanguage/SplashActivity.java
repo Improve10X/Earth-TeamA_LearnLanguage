@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.improve10x.earth_teama_learnlanguage.videos.VideosActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override

@@ -15,14 +15,21 @@
         android:theme="@style/Theme.EarthTeamA_LearnLanguage"
         tools:targetApi="31">
         <activity
-            android:name=".BaseAddEditActivity"
+            android:name=".videos.AddVideoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".VideosActivity"
+            android:name=".videos.EditVideoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".videos.VideosActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

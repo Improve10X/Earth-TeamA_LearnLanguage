@@ -1,4 +1,4 @@
-package com.improve10x.earth_teama_learnlanguage;
+package com.improve10x.earth_teama_learnlanguage.videos;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.improve10x.earth_teama_learnlanguage.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

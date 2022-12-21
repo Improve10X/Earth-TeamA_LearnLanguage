@@ -1,4 +1,4 @@
-package com.improve10x.earth_teama_learnlanguage;
+package com.improve10x.earth_teama_learnlanguage.videos;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -6,6 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.improve10x.earth_teama_learnlanguage.Constants;
+import com.improve10x.earth_teama_learnlanguage.R;
+import com.improve10x.earth_teama_learnlanguage.api.VideosService;
+import com.improve10x.earth_teama_learnlanguage.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +23,7 @@ public class VideosActivity extends BaseActivity {
 
    private ArrayList<Video> videos = new ArrayList<>();
    private RecyclerView videosRv;
-   private VideosAdapter videosAdapter;
-   private VideoService videoService;
+   private VideosAdapter videosAdapter;;
    private Button addBtn;
 
     @Override
@@ -29,22 +33,16 @@ public class VideosActivity extends BaseActivity {
         getSupportActionBar().setTitle("Videos");
         initViews();
         //setupData();
-        setupVideosAdapter();
         setupVideosRv();
-        setupApiService();
+        setupVideosAdapter();
         handleAddBtn();
     }
 
     private void handleAddBtn() {
         addBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, BaseAddEditActivity.class);
+            Intent intent = new Intent(this, AddVideoActivity.class);
             startActivity(intent);
         });
-    }
-
-    private void setupApiService() {
-        VideoApi videoApi = new VideoApi();
-        videoService = videoApi.createVideoService();
     }
 
     @Override
@@ -54,7 +52,7 @@ public class VideosActivity extends BaseActivity {
     }
 
     private void fetchVideos() {
-        Call<List<Video>> call = videoService.fetchVideos();
+        Call<List<Video>> call = videosService.fetchVideos();
         call.enqueue(new Callback<List<Video>>() {
             @Override
             public void onResponse(Call<List<Video>> call, Response<List<Video>> response) {
@@ -83,7 +81,9 @@ public class VideosActivity extends BaseActivity {
         videosAdapter.setOnItemActionListener(new OnItemActionListener() {
             @Override
             public void onItemClick(Video video) {
-                showToast("Item Clicked");
+                Intent intent = new Intent(VideosActivity.this, EditVideoActivity.class);
+                intent.putExtra(Constants.KEY_VIDEOS, video);
+                startActivity(intent);
             }
 
             @Override
@@ -97,15 +97,15 @@ public class VideosActivity extends BaseActivity {
                 showToast("Item Edit");
             }
         });
+        videosRv.setAdapter(videosAdapter);
     }
 
     private void setupVideosRv() {
         videosRv.setLayoutManager(new LinearLayoutManager(this));
-        videosRv.setAdapter(videosAdapter);
     }
 
     private void deleteVideo(Video video) {
-        Call<Void> call = videoService.deleteVideo(video.id);
+        Call<Void> call = videosService.deleteVideo(video.id);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
@@ -118,6 +118,5 @@ public class VideosActivity extends BaseActivity {
                 showToast("Failed to delete the video");
             }
         });
-
     }
 }

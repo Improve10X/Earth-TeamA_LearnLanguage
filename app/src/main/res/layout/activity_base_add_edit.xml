@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FCFDFD"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".BaseAddEditActivity">
+    tools:context=".videos.BaseAddEditVideoActivity">
 
     <LinearLayout
         android:id="@+id/no_of_views_txt"
@@ -136,8 +137,17 @@
         android:id="@+id/add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
         android:text="Add"
         android:textAllCaps="false"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
+        android:text="Update"
+        android:textAllCaps="false" />
 
 </LinearLayout>

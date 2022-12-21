@@ -1,4 +1,7 @@
-package com.improve10x.earth_teama_learnlanguage;
+package com.improve10x.earth_teama_learnlanguage.api;
+
+import com.improve10x.earth_teama_learnlanguage.Constants;
+import com.improve10x.earth_teama_learnlanguage.videos.Video;
 
 import java.util.List;
 
@@ -7,9 +10,10 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface VideoService {
+public interface VideosService {
 
     @GET(Constants.VIDEOS_END_POINT)
     Call<List<Video>> fetchVideos();
@@ -19,4 +23,7 @@ public interface VideoService {
 
     @DELETE(Constants.VIDEOS_END_POINT + "/{id}")
     Call<Void> deleteVideo(@Path("id") String id);
+
+    @PUT(Constants.VIDEOS_END_POINT + "/{id}")
+    Call<Void> updateVideo(@Path("id") String id, @Body Video video);
 }
