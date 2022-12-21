@@ -14,10 +14,16 @@ import java.util.List;
 public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
     private List<Video> videos;
+    private OnItemActionListener onItemActionListener;
+
+    void OnItemActionListener(OnItemActionListener listener) {
+        listener = onItemActionListener;
+    }
     void setData(List<Video> videoList){
         videos = videoList;
         notifyDataSetChanged();
     }
+
 
     @NonNull
     @Override
@@ -36,6 +42,12 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
         holder.uploadedTimeTxt.setText(video.uploadedTime);
         Picasso.get().load(video.imageUrl).into(holder.videoImg);
         Picasso.get().load(video.channelLogImgUrl).into(holder.channelLogImg);
+        holder.deleteImgBtn.setOnClickListener(view -> {
+            onItemActionListener.onItemDelete(video);
+        });
+        holder.itemView.setOnClickListener(view -> {
+            onItemActionListener.onItemClick(video);
+        });
     }
 
     @Override

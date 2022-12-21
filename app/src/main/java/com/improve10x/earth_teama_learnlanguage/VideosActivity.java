@@ -82,10 +82,44 @@ public class VideosActivity extends BaseActivity {
     private void setupVideosAdapter() {
         videosAdapter = new VideosAdapter();
         videosAdapter.setData(videos);
+        videosAdapter.OnItemActionListener(new OnItemActionListener() {
+            @Override
+            public void onItemClick(Video video) {
+                showToast("Item Clicked");
+            }
+
+            @Override
+            public void onItemDelete(Video video) {
+                deleteVideo(video);
+                fetchVideos();
+            }
+
+            @Override
+            public void onItemEdit(Video video) {
+                showToast("Item Edit");
+            }
+        });
     }
 
     private void setupVideosRv() {
         videosRv.setLayoutManager(new LinearLayoutManager(this));
         videosRv.setAdapter(videosAdapter);
+    }
+
+    private void deleteVideo(Video video) {
+        Call<Void> call = videoService.deleteVideo(video.id);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                showToast("successfully deleted video");
+                fetchVideos();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                showToast("Failed to delete the video");
+            }
+        });
+
     }
 }
