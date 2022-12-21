@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class VideosActivity extends BaseActivity {
    private RecyclerView videosRv;
    private VideosAdapter videosAdapter;
    private VideoService videoService;
+   private Button addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,14 @@ public class VideosActivity extends BaseActivity {
         setupVideosAdapter();
         setupVideosRv();
         setupApiService();
+        handleAddBtn();
+    }
+
+    private void handleAddBtn() {
+        addBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, BaseAddEditActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setupApiService() {
@@ -65,6 +76,7 @@ public class VideosActivity extends BaseActivity {
 
     private void initViews() {
         videosRv = findViewById(R.id.videos_rv);
+        addBtn = findViewById(R.id.add_btn);
     }
 
     private void setupVideosAdapter() {
