@@ -29,7 +29,7 @@ public class VideosActivity extends AppCompatActivity {
         videos = new ArrayList<>();
 
         Video video1 = new Video();
-        video1.imageUrl = "https://i.ytimg.com/an_webp/4BgWg2EAmww/mqdefault_6s.webp?du=3000&sqp=COS8h50G&rs=AOn4CLBvyrsN1bY5xuvUMhtXNXf3YJ5s5Q";
+        video1.imageUrl = "https://i.ytimg.com/an_webp/UX5cgiaEGMQ/mqdefault_6s.webp?du=3000&sqp=CITriZ0G&rs=AOn4CLDfHreEcQRGqdK8HVf3Wd0B24Zeow";
         video1.title = "Abdul Kalam, A Lesson for my Teacher: Learn English (IND) - Story for Children";
         video1.channelLogImgUrl = "https://yt3.ggpht.com/ytc/AMLnZu-VKA65djvd53kKMls4yvfdkkrVQgBZfTF5BNFqgA=s68-c-k-c0x00ffffff-no-rj";
         video1.channelName = "BookBox.com";
@@ -38,12 +38,12 @@ public class VideosActivity extends AppCompatActivity {
         videos.add(video1);
 
         Video video2 = new Video();
-        video2.imageUrl = "https://i.ytimg.com/an_webp/XbhecuoEgxs/mqdefault_6s.webp?du=3000&sqp=CNPah50G&rs=AOn4CLCb41nrALCfFBQnFD7Rgyhf0-m_2A";
-        video2.title = "Kung Fu Panda | Who Are You";
+        video2.imageUrl = "https://i.ytimg.com/an_webp/YRBSUv7tsY0/mqdefault_6s.webp?du=3000&sqp=CMz4iZ0G&rs=AOn4CLBtzTdsJTHnOrWZEhvEJ-k3RE-Lbg";
+        video2.title = "Abdul Kalam, School Topper: Learn English (IND) - Story for Children BookBox.com";
         video2.channelLogImgUrl = "https://yt3.ggpht.com/ytc/AMLnZu_Qx8pZINayK8MHTCMpT2dH6xBNdGvwgFargUPF=s48-c-k-c0x00ffffff-no-rj";
-        video2.channelName = "Khaled Osman";
-        video2.views = "38.5k views";
-        video2.uploadedTime = "1year ago";
+        video2.channelName = "BookBox.com";
+        video2.views = "1.8k views";
+        video2.uploadedTime = "11year ago";
         videos.add(video2);
     }
 

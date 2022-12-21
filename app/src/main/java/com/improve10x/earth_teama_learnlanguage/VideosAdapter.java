@@ -31,6 +31,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         Video video = videos.get(position);
         holder.videoTitleTxt.setText(video.title);
+        holder.channelNameTxt.setText(video.channelName);
         holder.viewsTxt.setText(video.views);
         holder.uploadedTimeTxt.setText(video.uploadedTime);
         Picasso.get().load(video.imageUrl).into(holder.videoImg);
