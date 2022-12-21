@@ -15,8 +15,6 @@ public class BaseAddEditVideoActivity extends BaseActivity {
     protected EditText channelLogoImageUrlTxt;
     protected EditText videoViewsTxt;
     protected EditText uploadedTimeTxt;
-    protected Button addBtn;
-    protected Button updateBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +30,5 @@ public class BaseAddEditVideoActivity extends BaseActivity {
         videoViewsTxt = findViewById(R.id.video_views_txt);
         channelLogoImageUrlTxt = findViewById(R.id.channel_logo_image_url_txt);
         uploadedTimeTxt = findViewById(R.id.uploaded_time_txt);
-        addBtn = findViewById(R.id.add_btn);
-        updateBtn = findViewById(R.id.update_btn);
     }
 }

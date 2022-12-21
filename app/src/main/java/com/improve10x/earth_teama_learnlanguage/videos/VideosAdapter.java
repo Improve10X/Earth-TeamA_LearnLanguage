@@ -12,20 +12,19 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-    public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
-
-     OnItemActionListener onItemActionListener;
-
-    public void setOnItemActionListener(OnItemActionListener listener) {
-        onItemActionListener = listener;
-    }
+public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
     private List<Video> videos;
-    void setData(List<Video> videoList){
+    private OnItemActionListener onItemActionListener;
+
+    void setOnItemActionListener(OnItemActionListener actionListener) {
+        onItemActionListener = actionListener;
+    }
+
+    void setData(List<Video> videoList) {
         videos = videoList;
         notifyDataSetChanged();
     }
-
 
     @NonNull
     @Override
@@ -42,10 +41,10 @@ import java.util.List;
         holder.channelNameTxt.setText(video.channelName);
         holder.viewsTxt.setText(video.views);
         holder.uploadedTimeTxt.setText(video.uploadedTime);
-        if(video.imageUrl != null && video.imageUrl.isEmpty() == false) {
+        if (video.imageUrl != null && video.imageUrl.isEmpty() == false) {
             Picasso.get().load(video.imageUrl).into(holder.videoImg);
         }
-        if(video.channelLogImgUrl != null && video.channelLogImgUrl.isEmpty() == false) {
+        if (video.channelLogImgUrl != null && video.channelLogImgUrl.isEmpty() == false) {
             Picasso.get().load(video.channelLogImgUrl).into(holder.channelLogImg);
         }
         holder.deleteImgBtn.setOnClickListener(view -> {

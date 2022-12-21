@@ -32,7 +32,6 @@ public class VideosActivity extends BaseActivity {
         setContentView(R.layout.activity_videos);
         getSupportActionBar().setTitle("Videos");
         initViews();
-        //setupData();
         setupVideosRv();
         setupVideosAdapter();
         handleAddBtn();
@@ -66,9 +65,6 @@ public class VideosActivity extends BaseActivity {
             }
         });
     }
-
-    //private void setupData() {
-    //}
 
     private void initViews() {
         videosRv = findViewById(R.id.videos_rv);

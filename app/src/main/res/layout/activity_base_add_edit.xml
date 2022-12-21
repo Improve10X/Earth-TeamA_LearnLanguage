@@ -140,7 +140,8 @@
         android:backgroundTint="#00BCD4"
         android:text="Add"
         android:textAllCaps="false"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/update_btn"
@@ -148,6 +149,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00BCD4"
         android:text="Update"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:visibility="gone" />
 
 </LinearLayout>
