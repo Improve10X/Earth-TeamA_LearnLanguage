@@ -36,9 +36,9 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
     private void handleUpdateBtn() {
         updateBtn.setOnClickListener(view -> {
             String title = titleTxt.getText().toString();
-            String videoImgUrl = videoImgUrlTxt.getText().toString();
+            String videoImgUrl = videoImgUrlImg.getText().toString();
             String channelName = channelNameTxt.getText().toString();
-            String channelLogo = channelLogoImageUrlTxt.getText().toString();
+            String channelLogo = channelLogoImageUrlImg.getText().toString();
             String videoView = videoViewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
             Video updatedVideo = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
@@ -64,10 +64,10 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
 
     private void showData() {
         titleTxt.setText(video.title);
-        videoImgUrlTxt.setText(video.imageUrl);
+        videoImgUrlImg.setText(video.imageUrl);
         channelNameTxt.setText(video.channelName);
         videoViewsTxt.setText(video.views);
-        channelLogoImageUrlTxt.setText(video.channelLogImgUrl);
+        channelLogoImageUrlImg.setText(video.channelLogImgUrl);
         uploadedTimeTxt.setText(video.uploadedTime);
     }
 }

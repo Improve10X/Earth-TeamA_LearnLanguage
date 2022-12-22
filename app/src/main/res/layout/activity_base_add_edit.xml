@@ -46,7 +46,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/video_img_url_txt"
+            android:id="@+id/video_img_url_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -84,7 +84,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/channel_logo_image_url_txt"
+            android:id="@+id/channel_logo_image_url_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

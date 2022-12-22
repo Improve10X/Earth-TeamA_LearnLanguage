@@ -30,9 +30,9 @@ public class AddVideoActivity extends BaseAddEditVideoActivity {
     private void handleAdd() {
         addBtn.setOnClickListener(view -> {
             String title = titleTxt.getText().toString();
-            String videoImgUrl = videoImgUrlTxt.getText().toString();
+            String videoImgUrl = videoImgUrlImg.getText().toString();
             String channelName = channelNameTxt.getText().toString();
-            String channelLogo = channelLogoImageUrlTxt.getText().toString();
+            String channelLogo = channelLogoImageUrlImg.getText().toString();
             String videoView = videoViewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
             Video video = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
