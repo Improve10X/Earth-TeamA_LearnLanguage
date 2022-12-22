@@ -56,5 +56,4 @@ public class AddVideoActivity extends BaseAddEditVideoActivity {
             }
         });
     }
-
 }
