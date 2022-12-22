@@ -15,6 +15,13 @@
         android:theme="@style/Theme.EarthTeamA_LearnLanguage"
         tools:targetApi="31">
         <activity
+            android:name=".videos.PlayVideoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".videos.AddVideoActivity"
             android:exported="false">
             <meta-data

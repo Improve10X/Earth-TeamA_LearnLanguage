@@ -77,9 +77,9 @@ public class VideosActivity extends BaseActivity {
         videosAdapter.setOnItemActionListener(new OnItemActionListener() {
             @Override
             public void onItemClick(Video video) {
-               // Intent intent = new Intent(VideosActivity.this, EditVideoActivity.class);
-             //   intent.putExtra(Constants.KEY_VIDEOS, video);
-             //   startActivity(intent);
+                Intent intent = new Intent(VideosActivity.this, PlayVideoActivity.class);
+                intent.putExtra(Constants.KEY_VIDEOS, video);
+                startActivity(intent);
             }
 
             @Override
