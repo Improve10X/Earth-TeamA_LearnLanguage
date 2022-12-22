@@ -61,6 +61,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_baseline_close_24" />
+
+                <ImageButton
+                    android:id="@+id/edit_img_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_edit_24" />
             </LinearLayout>
 
             <LinearLayout
