@@ -14,6 +14,7 @@ public class BaseAddEditVideoActivity extends BaseActivity {
     protected EditText channelLogoImageUrlImg;
     protected EditText videoViewsTxt;
     protected EditText uploadedTimeTxt;
+    protected  EditText youtubeVideoIdTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,10 @@ public class BaseAddEditVideoActivity extends BaseActivity {
         videoViewsTxt = findViewById(R.id.video_views_txt);
         channelLogoImageUrlImg = findViewById(R.id.channel_logo_image_url_img);
         uploadedTimeTxt = findViewById(R.id.uploaded_time_txt);
+        youtubeVideoIdTxt = findViewById(R.id.youtube_video_id_txt);
     }
 
-    protected Video createVideo(String title, String videoImgUrl, String channelName, String channelLogo, String videoView, String uploadedTime) {
+    protected Video createVideo(String title, String videoImgUrl, String channelName, String channelLogo, String videoView, String uploadedTime, String youtubeVideoId) {
         Video video = new Video();
         video.title = title;
         video.imageUrl = videoImgUrl;
@@ -39,6 +41,7 @@ public class BaseAddEditVideoActivity extends BaseActivity {
         video.channelLogImgUrl = channelLogo;
         video.views = videoView;
         video.uploadedTime = uploadedTime;
+        video.youtubePlayerId = youtubeVideoId;
         return video;
     }
 

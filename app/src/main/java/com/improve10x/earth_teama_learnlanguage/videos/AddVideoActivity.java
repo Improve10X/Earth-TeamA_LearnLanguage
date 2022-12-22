@@ -35,7 +35,8 @@ public class AddVideoActivity extends BaseAddEditVideoActivity {
             String channelLogo = channelLogoImageUrlImg.getText().toString();
             String videoView = videoViewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
-            Video video = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
+            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+            Video video = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime, youtubeVideoId);
             addVideo(video);
         });
     }

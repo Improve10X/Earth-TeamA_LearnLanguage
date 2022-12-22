@@ -41,7 +41,8 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
             String channelLogo = channelLogoImageUrlImg.getText().toString();
             String videoView = videoViewsTxt.getText().toString();
             String uploadedTime = uploadedTimeTxt.getText().toString();
-            Video updatedVideo = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime);
+            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+            Video updatedVideo = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime, youtubeVideoId);
             updateVideo(video.id, updatedVideo);
         });
     }
@@ -69,5 +70,6 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
         videoViewsTxt.setText(video.views);
         channelLogoImageUrlImg.setText(video.channelLogImgUrl);
         uploadedTimeTxt.setText(video.uploadedTime);
+        youtubeVideoIdTxt.setText(video.youtubePlayerId);
     }
 }
