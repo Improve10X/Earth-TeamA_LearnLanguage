@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.improve10x.earth_teama_learnlanguage.R;
+import com.improve10x.earth_teama_learnlanguage.databinding.VideoItemBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -29,31 +30,31 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     @NonNull
     @Override
     public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.video_item, parent, false);
-        VideoViewHolder videoViewHolder = new VideoViewHolder(view);
+        VideoItemBinding binding = VideoItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        VideoViewHolder videoViewHolder = new VideoViewHolder(binding);
         return videoViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         Video video = videos.get(position);
-        holder.videoTitleTxt.setText(video.title);
-        holder.channelNameTxt.setText(video.channelName);
-        holder.viewsTxt.setText(video.views);
-        holder.uploadedTimeTxt.setText(video.uploadedTime);
+        holder.binding.videoTitleTxt.setText(video.title);
+        holder.binding.channelNameTxt.setText(video.channelName);
+        holder.binding.viewsTxt.setText(video.views);
+        holder.binding.uploadedTimeTxt.setText(video.uploadedTime);
         if (video.imageUrl != null && video.imageUrl.isEmpty() == false) {
-            Picasso.get().load(video.imageUrl).into(holder.videoImg);
+            Picasso.get().load(video.imageUrl).into(holder.binding.videoImg);
         }
         if (video.channelLogImgUrl != null && video.channelLogImgUrl.isEmpty() == false) {
-            Picasso.get().load(video.channelLogImgUrl).into(holder.channelLogImg);
+            Picasso.get().load(video.channelLogImgUrl).into(holder.binding.channelLogoImg);
         }
-        holder.deleteImgBtn.setOnClickListener(view -> {
+        holder.binding.deleteImgBtn.setOnClickListener(view -> {
             onItemActionListener.onItemDelete(video);
         });
-        holder.itemView.setOnClickListener(view -> {
+        holder.binding.getRoot().setOnClickListener(view -> {
             onItemActionListener.onItemClick(video);
         });
-        holder.editImgBtn.setOnClickListener(view -> {
+        holder.binding.editImgBtn.setOnClickListener(view -> {
             onItemActionListener.onItemEdit(video);
         });
     }

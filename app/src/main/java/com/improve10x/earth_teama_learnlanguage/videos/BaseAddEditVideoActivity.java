@@ -5,16 +5,16 @@ import android.widget.EditText;
 
 import com.improve10x.earth_teama_learnlanguage.R;
 import com.improve10x.earth_teama_learnlanguage.base.BaseActivity;
-import com.improve10x.earth_teama_learnlanguage.databinding.ActivityBaseAddEditBinding;
+import com.improve10x.earth_teama_learnlanguage.databinding.ActivityBaseAddEditVideoBinding;
 
 public class BaseAddEditVideoActivity extends BaseActivity {
 
-    protected ActivityBaseAddEditBinding binding;
+    protected ActivityBaseAddEditVideoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityBaseAddEditBinding.inflate(getLayoutInflater());
+        binding = ActivityBaseAddEditVideoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 
