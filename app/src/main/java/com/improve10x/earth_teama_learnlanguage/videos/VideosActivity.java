@@ -11,6 +11,7 @@ import com.improve10x.earth_teama_learnlanguage.Constants;
 import com.improve10x.earth_teama_learnlanguage.R;
 import com.improve10x.earth_teama_learnlanguage.api.VideosService;
 import com.improve10x.earth_teama_learnlanguage.base.BaseActivity;
+import com.improve10x.earth_teama_learnlanguage.databinding.ActivityVideosBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,23 +23,22 @@ import retrofit2.Response;
 public class VideosActivity extends BaseActivity {
 
    private ArrayList<Video> videos = new ArrayList<>();
-   private RecyclerView videosRv;
+   private ActivityVideosBinding binding;
    private VideosAdapter videosAdapter;;
-   private Button addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_videos);
+        binding = ActivityVideosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Videos");
-        initViews();
         setupVideosRv();
         setupVideosAdapter();
         handleAddBtn();
     }
 
     private void handleAddBtn() {
-        addBtn.setOnClickListener(view -> {
+        binding.addBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, AddVideoActivity.class);
             startActivity(intent);
         });
@@ -66,11 +66,6 @@ public class VideosActivity extends BaseActivity {
         });
     }
 
-    private void initViews() {
-        videosRv = findViewById(R.id.videos_rv);
-        addBtn = findViewById(R.id.add_btn);
-    }
-
     private void setupVideosAdapter() {
         videosAdapter = new VideosAdapter();
         videosAdapter.setData(videos);
@@ -95,11 +90,11 @@ public class VideosActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        videosRv.setAdapter(videosAdapter);
+        binding.videosRv.setAdapter(videosAdapter);
     }
 
     private void setupVideosRv() {
-        videosRv.setLayoutManager(new LinearLayoutManager(this));
+        binding.videosRv.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void deleteVideo(Video video) {
