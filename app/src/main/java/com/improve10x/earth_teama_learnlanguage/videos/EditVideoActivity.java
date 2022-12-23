@@ -20,7 +20,7 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initViews();
-        if(getIntent().hasExtra(Constants.KEY_VIDEOS)) {
+        if (getIntent().hasExtra(Constants.KEY_VIDEOS)) {
             getSupportActionBar().setTitle("Edit Video");
             video = (Video) getIntent().getSerializableExtra(Constants.KEY_VIDEOS);
             updateBtn.setVisibility(View.VISIBLE);
@@ -35,13 +35,13 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
 
     private void handleUpdateBtn() {
         updateBtn.setOnClickListener(view -> {
-            String title = titleTxt.getText().toString();
-            String videoImgUrl = videoImgUrlImg.getText().toString();
-            String channelName = channelNameTxt.getText().toString();
-            String channelLogo = channelLogoImageUrlImg.getText().toString();
-            String videoView = videoViewsTxt.getText().toString();
-            String uploadedTime = uploadedTimeTxt.getText().toString();
-            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+            String title = binding.titleTxt.getText().toString();
+            String videoImgUrl = binding.videoImgUrlImg.getText().toString();
+            String channelName = binding.channelNameTxt.getText().toString();
+            String channelLogo = binding.channelLogoImageUrlImg.getText().toString();
+            String videoView = binding.videoViewsTxt.getText().toString();
+            String uploadedTime = binding.uploadedTimeTxt.getText().toString();
+            String youtubeVideoId = binding.youtubeVideoIdTxt.getText().toString();
             Video updatedVideo = createVideo(title, videoImgUrl, channelName, channelLogo, videoView, uploadedTime, youtubeVideoId);
             updateVideo(video.id, updatedVideo);
         });
@@ -64,12 +64,12 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
     }
 
     private void showData() {
-        titleTxt.setText(video.title);
-        videoImgUrlImg.setText(video.imageUrl);
-        channelNameTxt.setText(video.channelName);
-        videoViewsTxt.setText(video.views);
-        channelLogoImageUrlImg.setText(video.channelLogImgUrl);
-        uploadedTimeTxt.setText(video.uploadedTime);
-        youtubeVideoIdTxt.setText(video.youtubePlayerId);
+        binding.titleTxt.setText(video.title);
+        binding.videoImgUrlImg.setText(video.imageUrl);
+        binding.channelNameTxt.setText(video.channelName);
+        binding.videoViewsTxt.setText(video.views);
+        binding.channelLogoImageUrlImg.setText(video.channelLogImgUrl);
+        binding.uploadedTimeTxt.setText(video.uploadedTime);
+        binding.youtubeVideoIdTxt.setText(video.youtubePlayerId);
     }
 }
