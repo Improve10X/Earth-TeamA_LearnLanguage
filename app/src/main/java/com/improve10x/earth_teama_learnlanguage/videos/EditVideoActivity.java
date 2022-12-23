@@ -18,13 +18,11 @@ public class EditVideoActivity extends BaseAddEditVideoActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getIntent().hasExtra(Constants.KEY_VIDEOS)) {
             getSupportActionBar().setTitle("Edit Video");
             video = (Video) getIntent().getSerializableExtra(Constants.KEY_VIDEOS);
             binding.updateBtn.setVisibility(View.VISIBLE);
             showData();
-        }
-        handleUpdateBtn();
+            handleUpdateBtn();
     }
 
     private void handleUpdateBtn() {
